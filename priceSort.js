@@ -87,10 +87,25 @@ function sortListings(sortBy) {
     let threeDigitMin = maxInt;
     let threeDigitSerial = maxInt;
     
-    let fourDigitSumOne = 0;
-    let fourDigitCountOne = 0;
-    let fourDigitMinOne = maxInt;
-    let fourDigitSerialOne = maxInt;
+    let fourOneDigitSumOne = 0;
+    let fourOneDigitCountOne = 0;
+    let fourOneDigitMinOne = maxInt;
+    let fourOneDigitSerialOne = maxInt;
+    
+    let fourTwoDigitSumOne = 0;
+    let fourTwoDigitCountOne = 0;
+    let fourTwoDigitMinOne = maxInt;
+    let fourTwoDigitSerialOne = maxInt;
+    
+    let fourThreeDigitSumOne = 0;
+    let fourThreeDigitCountOne = 0;
+    let fourThreeDigitMinOne = maxInt;
+    let fourThreeDigitSerialOne = maxInt;
+    
+    let fourFourDigitSumOne = 0;
+    let fourFourDigitCountOne = 0;
+    let fourFourDigitMinOne = maxInt;
+    let fourFourDigitSerialOne = maxInt;
     
     let fourDigitSumTwo = 0;
     let fourDigitCountTwo = 0;
@@ -138,13 +153,39 @@ function sortListings(sortBy) {
             threeDigitMin = Math.min(threeDigitMin, currentPrice);
             threeDigitSerial = matchSerial(threeDigitMin, currentPrice, threeDigitSerial, currentSerial);
         }
-        // four digit serials - 1000 to 4999
+        // four digit serials - 1000 to 1999
         else if (currentSerial < 5000) {
             optionsList[i].style.backgroundColor = "#66D3FA"; // change color
-            fourDigitSumOne += parseFloat(currentPrice);
-            fourDigitCountOne += 1;
-            fourDigitMinOne = Math.min(fourDigitMinOne, currentPrice);
-            fourDigitSerialOne = matchSerial(fourDigitMinOne, currentPrice, fourDigitSerialOne, currentSerial);
+            fourOneDigitSumOne += parseFloat(currentPrice);
+            fourOneDigitCountOne += 1;
+            fourOneDigitMinOne = Math.min(fourOneDigitMinOne, currentPrice);
+            fourOneDigitSerialOne = matchSerial(fourOneDigitMinOne, currentPrice, fourOneDigitSerialOne, currentSerial);
+        }
+        // four digit serials - 2000 to 2999
+        else if (currentSerial < 5000) {
+            optionsList[i].style.backgroundColor = "#66D3FA"; // change color
+            fourTwoDigitSumOne += parseFloat(currentPrice);
+            fourTwoDigitCountOne += 1;
+            fourTwoDigitMinOne = Math.min(fourTwoDigitMinOne, currentPrice);
+            fourTwoDigitSerialOne = matchSerial(fourTwoDigitMinOne, currentPrice, fourTwoDigitSerialOne, currentSerial);
+        }
+        
+        // four digit serials - 3000 to 3999
+        else if (currentSerial < 5000) {
+            optionsList[i].style.backgroundColor = "#66D3FA"; // change color
+            fourThreeDigitSumOne += parseFloat(currentPrice);
+            fourThreeDigitCountOne += 1;
+            fourThreeDigitMinOne = Math.min(fourDigitMinOne, currentPrice);
+            fourThreeDigitSerialOne = matchSerial(fourThreeDigitMinOne, currentPrice, fourThreeDigitSerialOne, currentSerial);
+        }
+        
+        // four digit serials - 4000 to 4999
+        else if (currentSerial < 5000) {
+            optionsList[i].style.backgroundColor = "#66D3FA"; // change color
+            fourFourDigitSumOne += parseFloat(currentPrice);
+            fourFourDigitCountOne += 1;
+            fourFourDigitMinOne = Math.min(fourDigitMinOne, currentPrice);
+            fourFourDigitSerialOne = matchSerial(fourFourDigitMinOne, currentPrice, fourFourDigitSerialOne, currentSerial);
         }
         // four digit serials - 5000 to 9999
         else if (currentSerial < 10000) {
@@ -212,8 +253,14 @@ function sortListings(sortBy) {
     console.log(`   #${twoDigitSerial} - $${twoDigitMin}`);
     console.log(`100-999 average price: $${average(threeDigitSum, threeDigitCount)}`);
     console.log(`   #${threeDigitSerial} - $${threeDigitMin}`);
-    console.log(`1000-4999 average price: $${average(fourDigitSumOne, fourDigitCountOne)}`);
-    console.log(`   #${fourDigitSerialOne} - $${fourDigitMinOne}`);
+    console.log(`1000-1999 average price: $${average(fourOneDigitSumOne, fourOneDigitCountOne)}`);
+    console.log(`   #${fourOneDigitSerialOne} - $${fourOneDigitMinOne}`);
+    console.log(`2000-2999 average price: $${average(fourTwoDigitSumOne, fourTwoDigitCountOne)}`);
+    console.log(`   #${fourTwoDigitSerialOne} - $${fourTwoDigitMinOne}`);
+    console.log(`3000-3999 average price: $${average(fourThreeDigitSumOne, fourThreeDigitCountOne)}`);
+    console.log(`   #${fourThreeDigitSerialOne} - $${fourThreeDigitMinOne}`);
+    console.log(`4000-4999 average price: $${average(fourFourDigitSumOne, fourFourDigitCountOne)}`);
+    console.log(`   #${fourFourDigitSerialOne} - $${fourFourDigitMinOne}`);
     console.log(`5000-9999 average price: $${average(fourDigitSumTwo, fourDigitCountTwo)}`);
     console.log(`   #${fourDigitSerialTwo} - $${fourDigitMinTwo}`);
     console.log(`10000-12499 average price: $${average(fiveDigitSumOne, fiveDigitCountOne)}`);
