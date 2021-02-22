@@ -175,7 +175,7 @@ function sortListings(sortBy) {
             optionsList[i].style.backgroundColor = "#66D3FA"; // change color
             fourThreeDigitSumOne += parseFloat(currentPrice);
             fourThreeDigitCountOne += 1;
-            fourThreeDigitMinOne = Math.min(fourDigitMinOne, currentPrice);
+            fourThreeDigitMinOne = Math.min(fourThreeDigitMinOne, currentPrice);
             fourThreeDigitSerialOne = matchSerial(fourThreeDigitMinOne, currentPrice, fourThreeDigitSerialOne, currentSerial);
         }
         
@@ -184,7 +184,7 @@ function sortListings(sortBy) {
             optionsList[i].style.backgroundColor = "#66D3FA"; // change color
             fourFourDigitSumOne += parseFloat(currentPrice);
             fourFourDigitCountOne += 1;
-            fourFourDigitMinOne = Math.min(fourDigitMinOne, currentPrice);
+            fourFourDigitMinOne = Math.min(fourFourDigitMinOne, currentPrice);
             fourFourDigitSerialOne = matchSerial(fourFourDigitMinOne, currentPrice, fourFourDigitSerialOne, currentSerial);
         }
         // four digit serials - 5000 to 9999
