@@ -154,7 +154,7 @@ function sortListings(sortBy) {
             threeDigitSerial = matchSerial(threeDigitMin, currentPrice, threeDigitSerial, currentSerial);
         }
         // four digit serials - 1000 to 1999
-        else if (currentSerial < 5000) {
+        else if (currentSerial < 2000) {
             optionsList[i].style.backgroundColor = "#66D3FA"; // change color
             fourOneDigitSumOne += parseFloat(currentPrice);
             fourOneDigitCountOne += 1;
@@ -162,7 +162,7 @@ function sortListings(sortBy) {
             fourOneDigitSerialOne = matchSerial(fourOneDigitMinOne, currentPrice, fourOneDigitSerialOne, currentSerial);
         }
         // four digit serials - 2000 to 2999
-        else if (currentSerial < 5000) {
+        else if (currentSerial < 3000) {
             optionsList[i].style.backgroundColor = "#66D3FA"; // change color
             fourTwoDigitSumOne += parseFloat(currentPrice);
             fourTwoDigitCountOne += 1;
@@ -171,7 +171,7 @@ function sortListings(sortBy) {
         }
         
         // four digit serials - 3000 to 3999
-        else if (currentSerial < 5000) {
+        else if (currentSerial < 4000) {
             optionsList[i].style.backgroundColor = "#66D3FA"; // change color
             fourThreeDigitSumOne += parseFloat(currentPrice);
             fourThreeDigitCountOne += 1;
